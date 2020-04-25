@@ -3,12 +3,18 @@
 <body>
     {% block contents %}
     <br></br>
+    <div style="text-align: center;">
     <h2><b><i>MAIN</I></b></h2>
+    </div>
     <br></br>
+    <hr>
+    <div style="text-align: center;">
+        <a href="{% url 'new' %}"><button type="button" class="btn btn-primary">새로 만들기</button></a>
+    </div>
     <hr>
     <div class="container">
         {% for blog in blogs.all %}
-        <div class="card" style="margin-bottom: 25px;">
+        <div class="card" style="margin-bottom: 25px; text-align: center;">
             <div class="card-body">
                 <h5 class="card-title">{{blog.title}}</h5>
                 {{blog.pub_date}}
