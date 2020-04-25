@@ -5,7 +5,18 @@
     <br></br>
     <h2><b><i>MAIN</I></b></h2>
     <br></br>
-    <h5><a href="{% url 'profile' %}">간단한 글로 보려면 클릭</a></h5>
-    <h5><a href="{% url 'photofolio' %}">구구절절하게 보려면 클릭</a></h5>
+    <hr>
+    <div class="container">
+        {% for blog in blogs.all %}
+        <div class="card" style="margin-bottom: 25px;">
+            <div class="card-body">
+                <h5 class="card-title">{{blog.title}}</h5>
+                {{blog.pub_date}}
+                <p class="card-text">{{blog.summary}}</p>
+                <a href="#" class="btn btn-primary">More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
     {% endblock %}
 </body>
