@@ -24,3 +24,24 @@ def create(request):
     blog.pub_date = timezone.datetime.now()
     blog.save()
     return redirect('main')
+
+#UPDATE--------------------------------------------------
+
+def edit(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    return render(request, 'edit.html', {'blog':blog})
+
+def update(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    blog.title = request.GET['title']
+    blog.body = request.GET['body']
+    blog.pub_date = timezone.datetime.now()
+    blog.save()
+    return redirect('main')
+
+#DELETE--------------------------------------------------
+
+def delete(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    blog.delete()
+    return redirect('main')
