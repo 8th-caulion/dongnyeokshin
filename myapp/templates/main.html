@@ -13,7 +13,7 @@
                 <h5 class="card-title">{{blog.title}}</h5>
                 {{blog.pub_date}}
                 <p class="card-text">{{blog.summary}}</p>
-                <a href="#" class="btn btn-primary">More</a>
+                <a href="{% url 'detail' blog.id %}" class="btn btn-primary">More</a>
             </div>
         </div>
         {% endfor %}
