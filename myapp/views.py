@@ -20,6 +20,7 @@ def new(request):
 def create(request):
     blog = Blog()
     blog.title = request.GET['title']
+    blog.author = request.GET['author']
     blog.body = request.GET['body']
     blog.pub_date = timezone.datetime.now()
     blog.save()
@@ -34,6 +35,7 @@ def edit(request, blog_id):
 def update(request, blog_id):
     blog = get_object_or_404(Blog, pk=blog_id)
     blog.title = request.GET['title']
+    blog.author = request.GET['author']
     blog.body = request.GET['body']
     blog.pub_date = timezone.datetime.now()
     blog.save()
