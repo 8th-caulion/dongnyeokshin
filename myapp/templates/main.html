@@ -17,8 +17,12 @@
         <div class="card" style="margin-bottom: 25px; text-align: center;">
             <div class="card-body">
                 <h5 class="card-title">{{blog.title}}</h5>
-                글쓴이: {{blog.author}}
-                in {{blog.pub_date}}
+                Category {{blog.category}}
+                <br></br>
+                Author {{blog.author}}
+                <br></br>
+                Published in {{blog.pub_date}}
+                <br></br>
                 <p class="card-text">{{blog.summary}}</p>
                 <a href="{% url 'detail' blog.id %}" class="btn btn-primary">더보기</a>
             </div>
